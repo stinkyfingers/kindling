@@ -1,0 +1,115 @@
+$fonts: arial, Helvetica;
+$pink: #e4c;
+$grey: #222;
+$white: #fff;
+$offWhite: #eee;
+
+
+html{
+	font-family: $fonts;
+	height:100%
+}
+
+body{
+	margin:0;
+	#header{
+		margin: 0 0 .1em 0;
+		padding:.4em 0 0 0;
+		background-color: $pink;
+		width:100%;
+		.mainHeader{
+			text-align: center;
+			color:$white;
+			font-size: 4em;
+			margin:0;
+		}
+	}
+	
+	color:$pink;
+	a{
+		text-decoration: none;
+	}
+	a:link{
+		color:$pink;
+	}
+	a:active{
+		color:$grey;
+	}
+	a:visited{
+		color:$pink;
+	}
+	a:hover{
+		color:$grey;
+	}
+	height: 100%;
+}
+
+
+
+.menu{
+	text-align:center;
+	li{
+		list-style-type: none;
+		display:inline-block;
+		padding:0 1em 0 1em;
+	}
+}
+
+#main{
+	height:100%;
+	margin-bottom: -4em;
+	width:75%;
+	background-color: $offWhite;
+	margin-right: auto;
+	margin-left:auto;
+	padding:.4em;
+}
+
+.center{
+	text-align: center;
+}
+
+
+//buttons
+button.std, input.std{
+	background-color: $pink;
+	color:$white;
+	padding:.6em;
+	margin-top:.2em;
+	font-size: 1.2em;
+	border-radius:.2em;
+	
+}
+button.values{
+		margin-top:1em;
+}
+button.right{
+	margin-right:0;
+	margin-left:auto;
+}
+button.giant{
+	font-size: 3em;
+	padding: .4em 2em .4em 2em;
+}
+
+.banner{
+	padding:.6em;
+	color:$white;
+	background-color:$pink;
+}
+
+
+
+
+
+@media (min-width: 800px){
+	#main{
+		width:50%;
+	}
+	form.std{
+		input{
+			display:inline;
+		}
+	}
+}
+
