@@ -8,7 +8,8 @@ import (
 	"os"
 	"regexp"
 
-	"github.com/stinkyfingers/dice/controllers/application"
+	"github.com/stinkyfingers/badlibs/controllers/application"
+	"github.com/stinkyfingers/badlibs/controllers/libscontroller"
 )
 
 var (
@@ -25,6 +26,13 @@ func main() {
 	rh.AddRoute(regexp.MustCompile("/public/css/"), http.StripPrefix("/public/css/", http.FileServer(http.Dir("public/css"))))
 
 	//API
+	rh.AddRoute(regexp.MustCompile("/lib/create"), http.HandlerFunc(libscontroller.CreateLib))
+	rh.AddRoute(regexp.MustCompile("/lib/update"), http.HandlerFunc(libscontroller.UpdateLib))
+	rh.AddRoute(regexp.MustCompile("/lib/delete"), http.HandlerFunc(libscontroller.DeleteLib))
+	rh.AddRoute(regexp.MustCompile("/lib/get"), http.HandlerFunc(libscontroller.GetLib))
+	rh.AddRoute(regexp.MustCompile("/lib/find"), http.HandlerFunc(libscontroller.FindLib))
+
+	//APP
 	rh.AddRoute(regexp.MustCompile("/.*"), http.HandlerFunc(application.Application))
 
 	err := http.ListenAndServe(":"+os.Getenv("PORT"), &rh)

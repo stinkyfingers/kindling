@@ -3,7 +3,6 @@ package application
 import (
 	"html/template"
 	"net/http"
-	"strings"
 )
 
 func Application(rw http.ResponseWriter, r *http.Request) {

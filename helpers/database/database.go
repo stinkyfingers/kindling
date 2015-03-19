@@ -54,3 +54,7 @@ func MongoConnectionString() *mgo.DialInfo {
 
 	return &mongoDBDialInfo
 }
+
+func MongoDatabase() string {
+	return "badlibs"
+}
