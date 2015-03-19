@@ -17,4 +17,5 @@ func Application(rw http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		http.Error(rw, "Error executing templates.", 400)
 	}
+	//hmm
 }
